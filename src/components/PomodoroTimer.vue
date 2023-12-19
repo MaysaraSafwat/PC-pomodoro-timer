@@ -25,7 +25,7 @@
 import { timerDisplay } from "@/utils/utils";
 import sound from "../assets/timersound.mp3"
 
-const pomodoroTime = 0.1;
+const pomodoroTime = 25;
 export default {
   name: "PomodoroTimer",
   props: ["toggleTimers"],
@@ -55,6 +55,7 @@ export default {
           this.timerSound.play();
           this.clicked = !this.clicked;
           this.onfinish();
+          this.reset();
 
         }
       }, 1000);

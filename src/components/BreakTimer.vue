@@ -26,13 +26,13 @@
 <script>
 import { timerDisplay } from "../utils/utils";
 import sound from "../assets/timersound.mp3"
-const breakTime = 0.1;
+const breakTime = 5;
 export default {
   name: "BreakTimer",
   props: ["toggleTimers"],
   data() {
     return {
-      currentTime: breakTime * 60,
+      currentTime: breakTime * 60 ,
       clicked: false,
       breakInterval: null,
       timerSound :  new Audio(sound)
@@ -56,6 +56,7 @@ export default {
           this.timerSound.play();
           this.clicked = !this.clicked;
           this.onfinish();
+          this.reset();
         }
       }, 1000);
     },
